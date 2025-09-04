@@ -1,15 +1,11 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "./server.js",
-      "use": "@vercel/node"
+  "functions": {
+    "api/handshake.js": {
+      "runtime": "@vercel/node@18"
+    },
+    "api/health.js": {
+      "runtime": "@vercel/node@18"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/server.js"
-    }
-  ]
+  }
 }
