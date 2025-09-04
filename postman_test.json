@@ -1,0 +1,80 @@
+{
+  "info": {
+    "name": "Tranzilla Server Test",
+    "description": "Тест для локального сервера Tranzilla",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Handshake - Generate thtk",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sum\": \"100.00\",\n  \"currency\": \"2\",\n  \"orderid\": \"MYLO-1703123456789\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/tranzila/handshake",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "api",
+            "tranzila",
+            "handshake"
+          ]
+        },
+        "description": "Генерирует thtk токен для платежа"
+      },
+      "response": []
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "health"
+          ]
+        },
+        "description": "Проверка работы сервера"
+      },
+      "response": []
+    },
+    {
+      "name": "Server Info",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            ""
+          ]
+        },
+        "description": "Информация о сервере"
+      },
+      "response": []
+    }
+  ]
+}
